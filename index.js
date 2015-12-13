@@ -24,14 +24,9 @@ function generateArray (vox) {
   var resolutionY = data.getUint32(36, true)
   var resolutionZ = data.getUint32(40, true)
 
-  console.log(resolutionX, resolutionY, resolutionZ)
-
   assert.equal(data.getUint32(44, true), 1230657880)
+
   var nbVoxels = data.getUint32(56, true)
-
-  console.log(nbVoxels)
-
-  resolutionX = resolutionY = resolutionZ = 64
 
   var n = ndarray(new Int32Array(resolutionX * resolutionY * resolutionZ), [resolutionX, resolutionY, resolutionZ])
 
