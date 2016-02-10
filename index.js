@@ -11,7 +11,13 @@ function toArrayBuffer (buffer) {
 }
 
 function generateArray (vox) {
-  var data = new DataView(toArrayBuffer(vox))
+  var data;
+
+  if (vox instanceof ArrayBuffer) {
+    data = new DataView(vox);
+  } else {
+    throw new Error('vox is not of type ArrayBuffer');
+  }
 
   // HEADER
   assert.equal(data.getUint32(0, true), 542658390)
