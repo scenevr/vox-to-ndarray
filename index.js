@@ -26,9 +26,9 @@ function generateArray (vox) {
   // SIZE
   assert.equal(data.getUint32(20, true), 1163544915)
 
-  var resolutionX = data.getUint32(32, true)
-  var resolutionY = data.getUint32(36, true)
-  var resolutionZ = data.getUint32(40, true)
+  var resolutionX = data.getUint32(32, true) + 1
+  var resolutionY = data.getUint32(36, true) + 1
+  var resolutionZ = data.getUint32(40, true) + 1
 
   assert.equal(data.getUint32(44, true), 1230657880)
 
